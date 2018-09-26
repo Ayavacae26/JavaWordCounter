@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 public class WordCount {
 	public static void main(String[] args) {
-	
-	HashMap<String, Integer> map = new HashMap<String, Integer>(); 
+
+		// Here we are setting up the scanner to take in a file
+		Scanner scan = new Scanner(System.in);
+
 	File filename = new File("/Users/erikayavaca/Desktop/Erik Ayavaca.txt");
-	Scanner scan = null;
 	
 	try {
 		scan = new Scanner(filename);
@@ -22,9 +23,9 @@ public class WordCount {
 		e.printStackTrace();
 		
 	}
-	
 
 
 
-}
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+	}
 }
