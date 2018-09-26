@@ -15,7 +15,8 @@ public class WordCount {
 		Scanner textFile = new Scanner(System.in);
 
 	    //File filename = new File("/Users/erikayavaca/Desktop/Erik Ayavaca.txt"); Orginal input idea
-	
+
+        //
 	try {
 	    //Using the args(0) to put into the file into it
         File inputFile = new File(args[0]);
@@ -28,6 +29,7 @@ public class WordCount {
 		    //System.out.println(scan.nextLine());
 		//}
 	}
+	    // Will output if inout file is not found.
 	catch(FileNotFoundException e) {
 		System.out.println("File is not found");
         // e.printStackTrace();
@@ -41,7 +43,7 @@ public class WordCount {
 			 */
 			String text = textFile.next();
 
-			//Punctation clean uo. transform into lowercase and elminate punctuations
+			//Punctuation clean uo. transform into elements in string to lowercase and eliminate punctuation marks
 			text = text.toLowerCase();
 			String[] word = text.split("\\p{Punct}",0);
 
@@ -50,11 +52,11 @@ public class WordCount {
             for(int i = 0;word.length>i;i++){
 
             	// used if scanned text is not already stored in hashmap
-				if(wordCounter.containsKey(word[i] == false)){
-					wordCounter.put(word[i],1);
-				}
+				if (!wordCounter.containsKey(word[i])){
+                    wordCounter.put(word[i], 1);
+                }
 				// If the word is already found then update the count within hashmap by 1
-				else{
+				else {
 					wordCounter.put(word[i],wordCounter.get(word[i])+1);
 
 				}
