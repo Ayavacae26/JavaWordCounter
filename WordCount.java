@@ -7,7 +7,7 @@ import java.util.TreeMap;
 /**
  * By: Erik Ayavaca-Tirado
  * Iteration 1
- * As of 9/26//18 - output is not ordered
+ * As of 9/26//18 - output is ordered alphabetically
  */
 
 public class WordCount {
@@ -68,7 +68,7 @@ public class WordCount {
             }
 
         }
-        //using tree map to order it alphabetically
+        //using tree map to order it alphabetically. Putting in the hashmap into treemap for ordering purposes
         TreeMap<String, Integer> treeMap = new TreeMap<>(wordCounter);
         System.out.println(treeMap.entrySet());
 
