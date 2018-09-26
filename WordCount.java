@@ -39,7 +39,6 @@ public class WordCount {
         // going to use hashmap to keep track of the words
         HashMap<String, Integer> wordCounter = new HashMap<String, Integer>();
 
-
         while (textFile.hasNext()) {
 			/*
 			Storing the next scanned text into a new variable
@@ -63,15 +62,12 @@ public class WordCount {
                     wordCounter.put(word[i], wordCounter.get(word[i]) + 1);
 
                 }
-
-
             }
-
         }
         //using tree map to order it alphabetically. Putting in the hashmap into treemap for ordering purposes
         TreeMap<String, Integer> treeMap = new TreeMap<>(wordCounter);
         System.out.println(treeMap.entrySet());
         System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
-
     }
+
 }
