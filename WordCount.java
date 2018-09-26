@@ -35,7 +35,7 @@ public class WordCount {
 		// going to use hashmap to keep track of the words
 		HashMap<String, Integer> wordCounter= new HashMap<String, Integer>();
 
-		while(textFile.hasNext() !=false){
+		while(textFile.hasNext()){
 			/*
 			Storing the next scanned text into a new variable
 			 */
@@ -44,7 +44,13 @@ public class WordCount {
 			//Punctation clean uo. transform into lowercase and elminate punctuations
 			text = text.toLowerCase();
 			String[] word = text.split("\\p{Punct}",0);
-			
+
+			// Creating For loop to go through array and store values into hashmap
+
+            for(int i = 0;word.length>i;i++){
+
+
+            }
 
 
 
