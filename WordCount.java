@@ -49,6 +49,15 @@ public class WordCount {
 
             for(int i = 0;word.length>i;i++){
 
+            	// used if scanned text is not already stored in hashmap
+				if(wordCounter.containsKey(word[i] == false)){
+					wordCounter.put(word[i],1);
+				}
+				// If the word is already found
+				else{
+
+				}
+
 
             }
 
