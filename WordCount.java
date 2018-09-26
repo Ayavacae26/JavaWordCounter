@@ -71,6 +71,7 @@ public class WordCount {
         //using tree map to order it alphabetically. Putting in the hashmap into treemap for ordering purposes
         TreeMap<String, Integer> treeMap = new TreeMap<>(wordCounter);
         System.out.println(treeMap.entrySet());
+        System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
 
     }
 }
