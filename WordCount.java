@@ -53,16 +53,16 @@ public class WordCount {
 				if(wordCounter.containsKey(word[i] == false)){
 					wordCounter.put(word[i],1);
 				}
-				// If the word is already found
+				// If the word is already found then update the count within hashmap by 1
 				else{
+					wordCounter.put(word[i],wordCounter.get(word[i])+1);
 
 				}
 
 
             }
 
-
-
 		}
+		System.out.println(wordCounter.entrySet());
 	}
 }
