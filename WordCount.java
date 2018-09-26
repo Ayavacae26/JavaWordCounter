@@ -6,6 +6,8 @@ import java.util.Scanner;
 /**
  * By: Erik Ayavaca-Tirado
  * Iteration 1
+ * As of 9/26//18 - output is not ordered
+ *
  */
 
 public class WordCount {
