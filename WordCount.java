@@ -43,7 +43,11 @@ public class WordCount {
 
 			//Punctation clean uo. transform into lowercase and elminate punctuations
 			text = text.toLowerCase();
+			String[] word = text.split("\\p{Punct}",0);
 			
+
+
+
 		}
 	}
 }
