@@ -47,7 +47,7 @@ public class WordCount {
 
             //Punctuation clean uo. transform into elements in string to lowercase and eliminate punctuation marks
             text = text.toLowerCase();
-            String[] word = text.split("[^\\w\\^'\\^\\d]", 0);
+            String[] word = text.split("[^a-z\\^'\\^\\d]", 0);
 
             // Creating For loop to go through array and store values into hashmap
 
@@ -66,8 +66,18 @@ public class WordCount {
         }
         //using tree map to order it alphabetically. Putting in the hashmap into treemap for ordering purposes
         TreeMap<String, Integer> treeMap = new TreeMap<>(wordCounter);
+
+
+        int counter = 0;
+        for(HashMap.Entry<String,Integer> Total : wordCounter.entrySet()){
+            counter = Total.getValue() + counter;
+        }
+
+
         System.out.println(treeMap.entrySet());
+        System.out.println("Total is: " + counter);
         System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
+
     }
 
 }
