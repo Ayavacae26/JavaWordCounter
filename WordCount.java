@@ -8,6 +8,8 @@ import java.util.TreeMap;
  * By: Erik Ayavaca-Tirado
  * Iteration 1
  * As of 9/26//18 - output is ordered alphabetically
+ * This is a word counter that will taken in a txt file and then scan in the words in said file and
+ * output the different words and the number of occurances each had.
  */
 
 public class WordCount {
@@ -16,29 +18,21 @@ public class WordCount {
         // Here we are setting up the scanner to take in a file
         Scanner textFile = new Scanner(System.in);
 
-        //File filename = new File("/Users/erikayavaca/Desktop/Erik Ayavaca.txt"); Orginal input idea
-
-        //
         try {
             //Using the args(0) to put into the file into it
             File inputFile = new File(args[0]);
 
             //pointing to the file into the scanner
             textFile = new Scanner(inputFile);
-
-            // Not nesscary for this a that momment
-            //while(scan.hasNextLine()) {
-            //System.out.println(scan.nextLine());
-            //}
         }
         // Will output if inout file is not found.
         catch (FileNotFoundException e) {
             System.out.println("File is not found");
-            // e.printStackTrace();
         }
         // going to use hashmap to keep track of the words
         HashMap<String, Integer> wordCounter = new HashMap<String, Integer>();
 
+        //Only occurs if the text has a next line
         while (textFile.hasNext()) {
 			/*
 			Storing the next scanned text into a new variable
@@ -67,15 +61,19 @@ public class WordCount {
         //using tree map to order it alphabetically. Putting in the hashmap into treemap for ordering purposes
         TreeMap<String, Integer> treeMap = new TreeMap<>(wordCounter);
 
-
+        // Using this inorder to go through the hashmap to get the total words in the file
         int counter = 0;
         for(HashMap.Entry<String,Integer> Total : wordCounter.entrySet()){
             counter = Total.getValue() + counter;
         }
 
-
+        //Output is printed in the alphabetical order
         System.out.println(treeMap.entrySet());
-        System.out.println("Total is: " + counter);
+
+        // Total words in the text file
+        System.out.println("Total  words are: " + counter);
+
+        //Unique words that appear in the file
         System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
 
     }
