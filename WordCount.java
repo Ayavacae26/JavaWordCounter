@@ -47,7 +47,7 @@ public class WordCount {
 
             //Punctuation clean uo. transform into elements in string to lowercase and eliminate punctuation marks
             text = text.toLowerCase();
-            String[] word = text.split("\\p{Punct}", 0);
+            String[] word = text.split("[^\\w\\^'\\^\\d]", 0);
 
             // Creating For loop to go through array and store values into hashmap
 
