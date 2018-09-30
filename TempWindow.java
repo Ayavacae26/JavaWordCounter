@@ -42,10 +42,17 @@ public class TempWindow extends JFrame {
                 //pass this file to your function
                 System.out.println("You choose the file:" + chosenFile.getAbsolutePath());
                 System.out.println("You choose the file:" + chosenFile.getName());
+
+
+                //File input= new File(args[0]);
+                WordCount files = new WordCount(chosenFile);
+                files.wordCount();
             } else {
                 System.out.println("You hit cancel");
             }
         }
+
+
 
     }
 }
