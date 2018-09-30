@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 /**
- * By: Erik Ayavaca-Tirado
+ * @author  Erik Ayavaca-Tirado
  * Iteration 1
  * As of 9/26//18 - output is ordered alphabetically
  * This is a word counter that will taken in a txt file and then scan in the words in said file and
@@ -13,21 +13,24 @@ import java.util.TreeMap;
  */
 
 public class WordCount {
-    public static void main(String[] args) {
+    private File inputFile;
 
+    public WordCount(File file) {
+        this.inputFile = file;
+    }
+
+    public void wordCount() {
         // Here we are setting up the scanner to take in a file
         Scanner textFile = new Scanner(System.in);
 
         try {
-            //Using the args(0) to put into the file into it
-            File inputFile = new File(args[0]);
-
             //pointing to the file into the scanner
             textFile = new Scanner(inputFile);
         }
         // Will output if inout file is not found.
         catch (FileNotFoundException e) {
             System.out.println("File is not found");
+            return;
         }
         // going to use hashmap to keep track of the words
         HashMap<String, Integer> wordCounter = new HashMap<String, Integer>();
@@ -63,9 +66,10 @@ public class WordCount {
 
         // Using this inorder to go through the hashmap to get the total words in the file
         int counter = 0;
-        for(HashMap.Entry<String,Integer> Total : wordCounter.entrySet()){
+        for (HashMap.Entry<String, Integer> Total : wordCounter.entrySet()) {
             counter = Total.getValue() + counter;
         }
+
 
         //Output is printed in the alphabetical order
         System.out.println(treeMap.entrySet());
@@ -77,5 +81,6 @@ public class WordCount {
         System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
 
     }
-
 }
+
+
