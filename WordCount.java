@@ -75,7 +75,7 @@ public class WordCount {
         System.out.println(treeMap.entrySet());
 
         // Total words in the text file
-        System.out.println("Total  words are: " + counter);
+        System.out.println("Total words are: " + counter);
 
         //Unique words that appear in the file
         System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
