@@ -7,10 +7,5 @@ public class WordCountMain {
         File input = new File(args[0]);
         WordCount files = new WordCount(input);
         files.wordCount();
-
-
-
-
-
     }
 }
