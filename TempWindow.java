@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import ​javax.swing.JTextField​;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class TempWindow extends JFrame {
@@ -14,21 +14,23 @@ public class TempWindow extends JFrame {
     JButton fileButton = new JButton("Choose Text File");
 
     public TempWindow() {
-        this.setTitle("Word Counter File");
-        this.setBounds(300, 400, 350, 250); ​
-        this.getContentPane().setLayout(null); ​
+        this.setTitle("Word Counter");
+        this.setBounds(300,400,350,250);
+        this.getContentPane().setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-​this.label.setBounds(130, 60, 100, 30); ​
-        this.getContentPane().add(​label);
-​this.​fileButton.setBounds(100, 100, 150, 60); ​
-        this.getContentPane().add(​fileButton); ​
-        this.​fileButton.addActionListener(new FileButtonListner());
+
+        this.label.setBounds(130,60,100,30);
+        this.getContentPane().add(label);
+
+        this.fileButton.setBounds(100,100,150,60);
+        this.getContentPane().add(fileButton);
+        this.fileButton.addActionListener(new FileButtonListner());
+
     }
 
     private class FileButtonListner implements ActionListener {
-
         @Override
-        public void actionPerfomed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
             System.out.println("hit the file button");
             JFileChooser chooser = new JFileChooser();
             chooser.setFileFilter(new FileNameExtensionFilter("TEXT FILES", "txt", "test"));
@@ -70,4 +72,4 @@ public class TempWindow extends JFrame {
 
 
 
-}
+
