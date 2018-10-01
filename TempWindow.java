@@ -13,6 +13,9 @@ public class TempWindow extends JFrame {
     JLabel label = new JLabel("Word Counter");
     JButton fileButton = new JButton("Choose Text File");
 
+    /**
+     * This is where the Gui window is being created
+     */
     public TempWindow() {
         this.setTitle("Word Counter");
         this.setBounds(300,400,350,250);
@@ -28,6 +31,9 @@ public class TempWindow extends JFrame {
 
     }
 
+    /**
+     *The things listed below occur when the file button is pushed.
+     */
     private class FileButtonListner implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -54,27 +60,3 @@ public class TempWindow extends JFrame {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
