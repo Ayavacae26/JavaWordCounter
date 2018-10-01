@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+
+
 /**
  * @author  Erik Ayavaca-Tirado
  * Iteration 1
@@ -15,11 +17,19 @@ import java.util.TreeMap;
 public class WordCount {
     private File inputFile;
 
+    /**
+     * Creates a file
+     * @param file
+     */
     public WordCount(File file) {
         this.inputFile = file;
     }
 
+    /**
+     * Word count function
+     */
     public void wordCount() {
+
         // Here we are setting up the scanner to take in a file
         Scanner textFile = new Scanner(System.in);
 
