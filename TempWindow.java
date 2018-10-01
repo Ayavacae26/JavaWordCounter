@@ -7,12 +7,14 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.JScrollPane;
 
 
 public class TempWindow extends JFrame {
     JLabel label = new JLabel("Word Counter");
     JButton fileButton = new JButton("Choose Text File");
-
+    JTextArea Result = new JTextArea();
+    JScrollPane Scroll = new JScrollPane();
     /**
      * This is where the Gui window is being created
      */
@@ -29,6 +31,10 @@ public class TempWindow extends JFrame {
         this.getContentPane().add(fileButton);
         this.fileButton.addActionListener(new FileButtonListner());
 
+        Scroll = new JScrollPane(Result);
+        Scroll.setBounds(50, 150, 500, 700);
+
+        this.add(Scroll);
     }
 
     /**
@@ -50,13 +56,12 @@ public class TempWindow extends JFrame {
                 System.out.println("You choose the file:" + chosenFile.getName());
                 WordCount file = new WordCount(chosenFile);
                 file.wordCount();
-
+                Result.append("You choose the file:" + chosenFile.getAbsolutePath()+"\n You choose the file:" + chosenFile.getName()
+                +file.gettreeMap()+ "\n The total amount of words: " + file.getWordCount());
             } else {
                 System.out.println("You hit cancel");
             }
         }
-
-
 
     }
 }
