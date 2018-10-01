@@ -15,7 +15,9 @@ import java.util.TreeMap;
  */
 
 public class WordCount {
-    private File inputFile;
+     File inputFile;
+     TreeMap<String, Integer> treeMap = new TreeMap<>();
+     int counter = 0;
 
     /**
      * Creates a file
@@ -75,7 +77,7 @@ public class WordCount {
         TreeMap<String, Integer> treeMap = new TreeMap<>(wordCounter);
 
         // Using this inorder to go through the hashmap to get the total words in the file
-        int counter = 0;
+
         for (HashMap.Entry<String, Integer> Total : wordCounter.entrySet()) {
             counter = Total.getValue() + counter;
         }
@@ -89,8 +91,15 @@ public class WordCount {
 
         //Unique words that appear in the file
         System.out.println("Total # of unique words in this text file is:  " + wordCounter.size());
-
     }
+        public TreeMap<String,Integer> gettreeMap(){
+            return this.treeMap;
+        }
+
+        public int getWordCount() {
+        return this.counter;
+    }
+
 }
 
 
