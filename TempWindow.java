@@ -6,8 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 public class TempWindow extends JFrame {
     JLabel label = new JLabel("Word Counter");
@@ -42,11 +42,9 @@ public class TempWindow extends JFrame {
                 //pass this file to your function
                 System.out.println("You choose the file:" + chosenFile.getAbsolutePath());
                 System.out.println("You choose the file:" + chosenFile.getName());
+                WordCount file = new WordCount(chosenFile);
+                file.wordCount();
 
-
-                //File input= new File(args[0]);
-                WordCount files = new WordCount(chosenFile);
-                files.wordCount();
             } else {
                 System.out.println("You hit cancel");
             }
